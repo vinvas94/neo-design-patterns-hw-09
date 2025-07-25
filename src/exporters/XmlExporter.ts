@@ -11,8 +11,11 @@ export class XmlExporter extends DataExporter {
     return `<?xml version="1.0" encoding="UTF-8"?>\n<users>\n${usersXml}\n</users>`;
   }
 
-  protected beforeRender():void {
-    this.result = this.render();
+  protected afterRender():void {
+    this.result = this.result.replace(
+      /<\/users>$/,
+      `  <!-- exported ${new Date().toISOString()} -->\n</users>`
+    );
   }
 
   protected save(): void {

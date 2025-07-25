@@ -17,12 +17,7 @@ export class XmlIterator implements Iterable<UserData> {
 
   *[Symbol.iterator]() {
     for (const item of this.data) {
-      yield {
-        id: Number(item.id),
-        name: item.name,
-        email: item.email,
-        phone: item.phone,
-      };
+      yield item;
     }
   }
 }
