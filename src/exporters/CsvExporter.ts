@@ -17,6 +17,6 @@ export class CsvExporter extends DataExporter {
     if (!existsSync(dir)) {
       mkdirSync(dir, { recursive: true });
     }
-    writeFileSync(path, this.render(), 'utf-8');
+    writeFileSync(path, this.result, 'utf-8');
   }
 }

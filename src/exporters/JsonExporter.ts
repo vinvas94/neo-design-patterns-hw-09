@@ -14,6 +14,6 @@ export class JsonExporter extends DataExporter {
     if (!existsSync(dir)) {
       mkdirSync(dir, { recursive: true });
     }
-    writeFileSync(path, this.render(), "utf8")
+    writeFileSync(path, this.result, "utf8")
   }
 }
